@@ -11,7 +11,7 @@ yellow='\033[1;33m'
 
 
 printf ${yellow}"Official deb mirrors or yandex mirrors(deb or ya): ${nc}\n"
-read $mirrors
+read mirrors
 
 if [ "$mirrors" ==  "deb" ]; then
     wget https://codeberg.org/i4ox/dotfiles/raw/branch/main/services/pkg/sources-deb.list
