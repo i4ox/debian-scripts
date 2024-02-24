@@ -48,10 +48,6 @@ elif [ "$shell" = "zsh" ]; then
     $ld cp completions/zsh/_apt-fast /usr/share/zsh/functions/Completion/Debian/
     $ld chown root:root /usr/share/zsh/functions/Completion/Debian/_apt-fast
     source /usr/share/zsh/functions/Completion/Debian/_apt-fast
-elif [ "$shell" = "fish" ]; then
-    $ld cp completions/fish/apt-fast.fish /etc/fish/conf.d/completions/
-    $ld chown root:root /etc/fish/conf.d/completions/apt-fast.fish
-    source /etc/fish/conf.d/completions/apt-fast.fish
 fi
 
 

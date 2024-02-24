@@ -14,7 +14,7 @@ printf ${yellow}"Official deb mirrors or yandex mirrors(deb or ya): ${nc}\n"
 read mirrors
 
 # Установка wget, если есть необходимость
-[ -x "$command -v wget" ] || $ld apt install wget
+[ -x "$(command -v wget)" ] || $ld apt install wget
 
 if [ "$mirrors" ==  "deb" ]; then
     wget https://codeberg.org/i4ox/dotfiles/raw/branch/main/services/pkg/sources-deb.list

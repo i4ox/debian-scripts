@@ -17,7 +17,7 @@ apt install doas -yy
 && exit 1
 
 # Установка wget, если есть необходимость
-[ -x "$command -v wget" ] || apt install wget
+[ -x "$(command -v wget)" ] || apt install wget
 
 # Установка конфига для open-doas
 wget https://codeberg.org/i4ox/dotfiles/raw/branch/main/admin/doas.conf
