@@ -5,7 +5,7 @@ red='\033[0;31m'
 nc='\033[0m'
 yellow='\033[1;33m'
 confdir="$HOME/.config/i3"
-shell="$(echo $SHELL | cut -d"/" -f 4)"
+shell="$(echo $SHELL)"
 
 # Определяем используется open-doas или sudo
 [ -x "$(command -v sudo)" ] && ld="sudo"
@@ -29,12 +29,12 @@ mv config $confdir/config
 wget https://codeberg.org/i4ox/dotfiles/raw/branch/main/admin/xinitrc
 mv xinitrc ~/.xinitrc
 
-if [ "$shell" = "bash" ]; then
+if [ "$shell" = "/bin/bash" ]; then
     echo 'if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then' >> ~/.bash_profile
     echo '  exec startx' >> ~/.bash_profile
     echo 'fi' >> ~/.bash_profile
     cat ~/.bash_profile
-elif [ "$shell" = "zsh" ]; then
+elif [ "$shell" = "/bin/zsh" ]; then
     echo 'if [ -z "$DISPLAY" ] && [ "$XDG_VTNR" = 1 ]; then' >> ~/.zprofile
     echo '  exec startx' >> ~/.zprofile
     echo 'fi' >> ~/.zprofile

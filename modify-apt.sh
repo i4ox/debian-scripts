@@ -5,7 +5,7 @@ red='\033[0;31m'
 nc='\033[0m'
 yellow='\033[1;33m'
 srcdir="$HOME/.local/src"
-shell="$(echo $SHELL | cut -d"/" -f 4)"
+shell="$(echo $SHELL)"
 
 # Определяем используется open-doas или sudo
 [ -x "$(command -v sudo)" ] && ld="sudo"
@@ -39,12 +39,12 @@ else
 fi
 
 # Устанавливаем авто-дополнение для правильной оболочки
-if [ "$shell" = "bash" ]; then
+if [ "$shell" = "/bin/bash" ]; then
     $ld apt install bash-completion -yy
     $ld cp completions/bash/apt-fast /etc/bash_completion.d/
     $ld chown root:root /etc/bash_completion.d/apt-fast
     ./etc/bash_completion
-elif [ "$shell" = "zsh" ]; then
+elif [ "$shell" = "/bin/zsh" ]; then
     $ld cp completions/zsh/_apt-fast /usr/share/zsh/functions/Completion/Debian/
     $ld chown root:root /usr/share/zsh/functions/Completion/Debian/_apt-fast
     source /usr/share/zsh/functions/Completion/Debian/_apt-fast
