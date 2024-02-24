@@ -10,9 +10,9 @@ yellow='\033[1;33m'
 [ -x "$(command -v doas)" ] && [ -e /etc/doas.conf ] && ld="doas"
 
 
-$ld apt install linux-headers-amd64
-$ld apt install nvidia-driver firmware-misc-nonfree
-$ld dpkg --add-architecture i386 && $ld apt update
-$ld apt install nvidia-libs:i386
+$ld apt install linux-headers-amd64 -yy
+$ld apt install nvidia-driver firmware-misc-nonfree -yy
+$ld dpkg --add-architecture i386 && $ld apt update --yy
+$ld apt install nvidia-driver-libs:i386 --yy
 
 printf ${yellow}"NVIDIA DRIVERS ALREADY INSTALLED, PLEASE REBOOT THE PC ${nc}\n"
