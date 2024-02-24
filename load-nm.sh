@@ -15,9 +15,9 @@ $ld mv NetworkManager.conf /etc/NetworkManager/NetworkManager.conf
 # Отключаем networking
 $ld systemctl stop networking
 $ld systemctl disable networking
+$ld systemctl stop wpa_supplicant
+$ld systemctl disable wpa_supplicant
 
 # Включаем Network-Manager
-$ld systemctl enable wpa_supplicant
 $ld systemctl enable NetworkManager
-$ld systemctl restart wpa_supplicant
 $ld systemctl restart NetworkManager

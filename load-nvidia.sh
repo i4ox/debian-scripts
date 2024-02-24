@@ -10,7 +10,7 @@ yellow='\033[1;33m'
 [ -x "$(command -v doas)" ] && [ -e /etc/doas.conf ] && ld="doas"
 
 
-$ld apt install linux-headers-amdd64
+$ld apt install linux-headers-amd64
 $ld apt install nvidia-driver firmware-misc-nonfree
 $ld dpkg --add-architecture i386 && $ld apt update
 $ld apt install nvidia-libs:i386
