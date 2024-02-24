@@ -9,6 +9,6 @@ yellow='\033[1;33m'
 [ -x "$(command -v sudo)" ] && ld="sudo"
 [ -x "$(command -v doas)" ] && [ -e /etc/doas.conf ] && ld="doas"
 
-$ld apt install pipewire pipewire-audio pipewire-alsa pipewire-jack wireplumber pipewire-pulse
+$ld apt install pipewire pipewire-audio pipewire-alsa pipewire-jack wireplumber pipewire-pulse -yy
 
 printf ${yellow}"PIPEWIRE ALREADY INSTALLED, PLEASE REBOOT THE PC ${nc}\n"
