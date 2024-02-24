@@ -13,7 +13,7 @@ user="$(getent group 1000 | cut -d':' -f 1)"
 $ld mkdir -p /etc/systemd/system/getty@tty1.service.d/
 
 # Установка wget, если есть необходимость
-[ -x "$command -v wget" ] || apt install wget
+[ -x "$command -v wget" ] || $ld apt install wget
 
 wget https://codeberg.org/i4ox/dotfiles/raw/branch/main/admin/autologin.conf
 sed -i "s/artlkv/${user}/g" autologin.conf

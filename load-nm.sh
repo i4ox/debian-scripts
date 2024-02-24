@@ -8,7 +8,7 @@
 $ld apt install network-manager wpasupplicant -yy
 
 # Установка wget, если есть необходимость
-[ -x "$command -v wget" ] || apt install wget
+[ -x "$command -v wget" ] || $ld apt install wget
 
 # Заменяем конфиг по-умолчанию
 wget https://codeberg.org/i4ox/dotfiles/raw/branch/main/services/NetworkManager.conf
