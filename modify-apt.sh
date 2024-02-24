@@ -12,7 +12,7 @@ shell="$(echo $SHELL | cut -d"/" -f 4)"
 [ -x "$(command -v doas)" ] && [ -e /etc/doas.conf ] && ld="doas"
 
 # Проверяем установлен ли apt-fast в системе
-if [ -x $(command -v apt-fast) ]; then
+if [ -x "$(command -v apt-fast)" ]; then
     printf ${yellow}"apt-fast already installed ${nc}\n"
     printf ${yellow}"it can be configured in /etc/apt-fast.conf ${nc}\n"
     exit 0
