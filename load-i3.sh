@@ -15,7 +15,7 @@ $ld apt install xorg xclip xinit i3-wm
 # Установка wget, если есть необходимость
 [ -x "$(command -v wget)" ] || $ld apt install wget
 
-wget https://codeberg.org/i4ox/dotfiles/raw/branch/main/config/i3/config
+wget https://codeberg.org/i4ox/dotfiles/raw/branch/main/.config/i3/config
 
 if [ -d "$confdir" ]; then
     printf ${yellow}"config directory for i3 already exists ${nc}\n"
