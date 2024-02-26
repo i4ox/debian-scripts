@@ -5,7 +5,7 @@
 [ -x "$(command -v sudo)" ] && ld="sudo"
 
 # Установка NetworkManager
-$ld apt install network-manager wpasupplicant -yy
+$ld apt install network-manager wpasupplicant network-manager-gnome -yy
 
 # Установка wget, если есть необходимость
 [ -x "$(command -v wget)" ] || $ld apt install wget
@@ -15,6 +15,7 @@ wget https://codeberg.org/i4ox/dotfiles/raw/branch/main/services/NetworkManager.
 $ld chmod 644 NetworkManager.conf
 $ld mv NetworkManager.conf /etc/NetworkManager/NetworkManager.conf
 
+# Установка конфига для сетевых интерфейсов
 wget https://codeberg.org/i4ox/dotfiles/raw/branch/main/services/interfaces
 $ld chmod 600 interfaces
 $ld mv interfaces /etc/network/interfaces
